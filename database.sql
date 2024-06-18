@@ -1,7 +1,7 @@
 CREATE TABLE `media` (
   `media_id` bigint(20) NOT NULL,
   `media_title` text NOT NULL,
-  `media_type` text NOT NULL,
+  `media_type` text NOT NULL
 
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

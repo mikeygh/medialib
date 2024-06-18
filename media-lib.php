@@ -1,5 +1,5 @@
 <?php
-class ToDo {
+class MediaLib {
   // (A) CONSTRUCTOR - CONNECT TO DATABASE
   private $pdo = null;
   private $stmt = null;
@@ -31,7 +31,7 @@ class ToDo {
       $sql = "INSERT INTO `media` (`media_title`, `media_type`) VALUES (?,?)";
       $data = [$name, $type];
     } else {
-      $sql = "UPDATE `media` SET `media_title`=?, `media_type`=? WHERE `todo_id`=?";
+      $sql = "UPDATE `media` SET `media_title`=?, `media_type`=? WHERE `media_id`=?";
       $data = [$name, $type, $id];
     }
     $this->query($sql, $data);
@@ -53,10 +53,10 @@ class ToDo {
 
 // (G) DATABASE SETTINGS - CHANGE TO YOUR OWN!
 define("DB_HOST", "localhost");
-define("DB_NAME", "test");
+define("DB_NAME", "testdb");
 define("DB_CHARSET", "utf8mb4");
 define("DB_USER", "root");
 define("DB_PASSWORD", "");
 
 // (H) NEW TO-DO OBJECT
-$TODO = new ToDo();
+$MEDIALIB = new MediaLib();
